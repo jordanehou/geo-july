@@ -1,0 +1,31 @@
+pipeline{
+    agent any
+    tools{
+        maven 'M2_HOME'
+    }
+
+    stages{
+        stage("checkout"){
+            steps{
+                checkout scm
+            }
+        }
+        stage("scan the code"){
+            steps{
+                withSonaqubeEnv("sonaqueServer"){
+                    sh'mvn verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=kserge2001_week16-code'
+                }
+            }
+        }
+        stage("build the job"){
+            steps{
+                sh 'mvn clean install compile test package'
+            }
+        }
+        stage("store the artefactory"){
+            steps{
+                
+            }
+        }
+    }
+}
