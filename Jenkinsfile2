@@ -21,7 +21,7 @@ pipeline{
         }
         stage("store the artefactory"){
             steps{
-               sh 'curl -u<USERNAME>:<PASSWORD> -T target/bio*.jar "http://ec2-16-171-238-55.eu-north-1.compute.amazonaws.com:8081/artifactory/geoapp/geoapp"'
+               sh 'curl -u<USERNAME>:<PASSWORD> -T target/bio*.jar "http://ec2-16-171-238-55.eu-north-1.compute.amazonaws.com:8081/artifactory/geoapp/"'
             }
         }
         
