@@ -5,19 +5,14 @@ pipeline{
     }
 
     stages{
-        stage("checkout"){
-            steps{
-                checkout scm
-            }
-        }
         stage("scan the code"){
             steps{
                 withSonaqubeEnv("sonaqueServer"){
-                    sh'mvn verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=kserge2001_week16-code'
+                    sh'mvn verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=devops-july_devops-july-1'
                 }
             }
         }
-        stage("build the job"){
+        /*stage("build the job"){
             steps{
                 sh 'mvn clean install compile test package'
             }
@@ -27,5 +22,6 @@ pipeline{
                 
             }
         }
+        */
     }
 }
