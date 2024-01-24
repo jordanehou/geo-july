@@ -25,7 +25,7 @@ pipeline{
         }
         stage("store the artefactory"){
             steps{
-                
+               sh'echo 1' 
             }
         }
     }
