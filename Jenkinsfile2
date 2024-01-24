@@ -5,15 +5,9 @@ pipeline{
     }
 
     stages{
-        /*stage("checkout"){
-            steps{
-                checkout scm
-            }
-        }
-        */
         stage("scan the code"){
             steps{
-                withSonaqubeEnv("sonaqueServer"){
+                withSonaqubeEnv("sonarQube"){
                     sh'mvn verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=kserge2001_week16-code'
                 }
             }
