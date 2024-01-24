@@ -5,11 +5,12 @@ pipeline{
     }
 
     stages{
-        stage("checkout"){
+        /*stage("checkout"){
             steps{
                 checkout scm
             }
         }
+        */
         stage("scan the code"){
             steps{
                 withSonaqubeEnv("sonaqueServer"){
