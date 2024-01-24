@@ -12,16 +12,17 @@ pipeline{
                 }
             }
         }
-        /*stage("build the job"){
+        stage("build the job"){
             steps{
+                  sh 'echo 1'
                 //sh 'mvn clean install compile test package'
             }
         }
         stage("store the artefactory"){
             steps{
-                
+               sh'echo 2'
             }
         }
-        */
+        
     }
 }
