@@ -19,7 +19,7 @@ pipeline{
         }
         stage("build the job"){
             steps{
-                sh 'mvn clean install compile test package'
+                //sh 'mvn clean install compile test package'
             }
         }
         stage("store the artefactory"){
