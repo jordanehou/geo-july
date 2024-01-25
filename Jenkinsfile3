@@ -25,7 +25,7 @@ pipeline{
                 sh 'mvn test'
             }
         }
-        /*
+        
         stage('build image'){
             steps{
                 script{
@@ -48,9 +48,9 @@ pipeline{
                     }
                 }
             }
-        */
+        
     
-        stage('Deploy image'){
+        /*stage('Deploy image'){
             steps{
                 script{
                     docker.withRegistry("https://"+registry,"ecr:eu-north-1:"+registryCredential){
@@ -59,6 +59,7 @@ pipeline{
                 }
             }
         }
+        */
         
     }
 }
