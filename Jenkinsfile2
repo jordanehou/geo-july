@@ -5,6 +5,11 @@ pipeline{
     }
 
     stages{
+        stage('checkout'){
+            steps{
+                git branch: 'main', url: 'https://github.com/jordanehou/geo-july.git'
+            }
+        }
         stage("scan the code"){
             steps{
                 withSonaqubeEnv("sonarQube"){
